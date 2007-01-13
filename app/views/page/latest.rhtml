@@ -1,0 +1,12 @@
+<h2>Latest stuff</h2>
+
+<div class="content">
+<table border="1" style="width: 100%">
+<% for item in @items %>
+    <tr>
+        <td style="width: 100px"><%= link_to item.date_added, {:action => 'view', :id => Item.id2accessor(item.id)}%></td>
+        <td><%=h(item.data)%></td>       
+    </tr>
+<% end %>
+</table>
+</div>

@@ -1,0 +1,5 @@
+* Write a cron script that removes entries from the database, according to certain rules
+  (e.g. not accessed within X days).
+* Add a second table that stores all the id's that have become free, so we can use them again.
+  Optionally, only re-use old id's after a certain timespan X has passed.
+* Add an admin interface (based on the existing, disabled, scaffold)

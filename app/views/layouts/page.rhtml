@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>qdump.com</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div id="container">
+        <div id="topheader">
+	      <div id="theader">qdump.com</div>
+          <span id="theadert">Dump. Share. Happy.</span>
+		</div>
+		<div id="mainbanner">			 
+		</div>
+		<div id="nav">
+			  <ul>
+				<li><%= link_to 'Dump!', {:action => 'index' } %></li>
+				<li><%= link_to 'Latest', {:action => 'latest' } %></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Imprint</a></li>
+				<li><a href="#">Contact</a></li>
+			  </ul>
+		</div>
+		<div id="body">
+		    <%= @content_for_layout %>
+		</div>
+		<div id="footer">
+		  Copyright (c)2007 qdump.com - Design by <a href="http://www.thewebdude.co.uk/">thewebdude</a>
+		</div>
+	</body>
+</html>			

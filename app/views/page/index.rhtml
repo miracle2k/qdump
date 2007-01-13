@@ -1,0 +1,14 @@
+<% if @flash[:notice] %>
+  <h2>Error</h2> 
+  <div class="intro"><%= @flash[:notice] %></div>
+<% end %>
+
+<%= error_messages_for 'item' %>
+
+<h2>Dump your stuff:</h2>
+<div>
+  <%= start_form_tag :action => 'do_dump' %>
+    <%= text_area ('item', 'data', 'style' => 'width: 100%; height: 200px', 'rows' => nil, 'cols' => nil) %></p>  
+    <%= submit_tag "Dump!" , 'style' => 'width: 100%' %>  
+  <%= end_form_tag %>
+</div>

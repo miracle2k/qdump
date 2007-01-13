@@ -1,0 +1,13 @@
+<%= error_messages_for 'item' %>
+
+<!--[form:item]-->
+<p><label for="item_date_added">Date added</label><br/>
+<%= datetime_select 'item', 'date_added'  %></p>
+
+<p><label for="item_datatype">Datatype</label><br/>
+<%= text_field 'item', 'datatype'  %></p>
+
+<p><label for="item_data">Data</label><br/>
+<%= text_area 'item', 'data'  %></p>
+<!--[eoform:item]-->
+
