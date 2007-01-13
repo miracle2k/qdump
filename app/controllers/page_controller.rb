@@ -7,6 +7,15 @@ class PageController < ApplicationController
     redirect_to(:action => 'index')
   end
   
+  def about
+  end
+  
+  def imprint
+  end
+  
+  def contact
+  end
+  
   def index
   end
   
