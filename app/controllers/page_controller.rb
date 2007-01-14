@@ -14,17 +14,30 @@ class PageController < ApplicationController
   end
   
   def contact
+    # form has been submitted
+    #if request.post 
+    #  SendMessage.contact_message(david)
+    #end
   end
+  
+ def send_contact_form
+   if request.post?
+      Mailer::deliver_contactform_message(params[:author])
+    redirect_to :action => 'contact'
+    flash[:notice] = "Thanks for your message!"
+  end
+   end 
+
+  
   
   def index
   end
   
-  def do_dump
+  def dump
     @item = Item.new(params[:item])
     @item.date_added = Time.now()
     if @item.save
-      flash[:notice] = 'Item was successfully created.'
-      redirect_to :action => 'index'
+      render :action => 'success'
     else
       flash[:notice] = 'Item creation failed.'
       render :action => 'index'

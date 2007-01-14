@@ -1,0 +1,6 @@
+<%
+  accessor = Item.id2accessor(@item.id)
+%>
+<h2>Yeah! Your text was stored, and is accessible at:</h2>
+<h2 style="text-align: center"><a href="/page/view/<%=accessor%>">qdump.org/<%=accessor%></a></h2>
+Please note that it might be removed after it was not accessed for a certain amount of time.

@@ -1,0 +1,28 @@
+<h2>Contact</h2>
+
+<% if @flash[:notice] %>
+  <h2><%= @flash[:notice] %></h2> 
+<% end %>
+
+<%= start_form_tag :action => 'send_contact_form'  %>
+<table cellspacing="5">
+  <tr>
+    <td>Your Name:</h2>
+    <td><%= text_field "author", "name" %></h2>
+  </tr>
+  <tr>
+    <td>Your E-Mail:</h2>
+    <td><%= text_field "author", "email" %></h2>
+  </tr>
+   <tr>
+    <td valign="top">Your Message:</h2>
+    <td><%= text_area "author", "message" %><br/></h2>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: right">
+      <%= submit_tag "Send message" %>
+    </td>
+  </tr>
+</table>
+<%= end_form_tag %> 
+

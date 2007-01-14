@@ -15,18 +15,18 @@
 		</div>
 		<div id="nav">
 			  <ul>
-				<li><%= link_to 'Dump!', {:action => 'index' } %></li>
-				<li><%= link_to 'Latest', {:action => 'latest' } %></li>
-				<li><%= link_to 'About', {:action => 'about' } %></li>
-				<li><%= link_to 'Imprint', {:action => 'imprint' } %></li>
-				<li><%= link_to 'Contact', {:action => 'contact' } %></li>
+				<li><%= link_to 'Dump!', {:action => 'index' } %></li>	
+				<li class="right"><%= link_to 'Contact', {:action => 'contact' } %></li>
+				<li class="right"><%= link_to 'About', {:action => 'about' } %></li>
 			  </ul>
 		</div>
 		<div id="body">
 		    <%= @content_for_layout %>
 		</div>
 		<div id="footer">
-		  Copyright (c)2007 qdump.com - Design by <a href="http://www.thewebdude.co.uk/">thewebdude</a>
+		  Copyright (c)2007 qdump.com &middot; 
+		  <%= link_to 'Imprint', {:action => 'imprint' } %> <br />
+		  Design by <a href="http://www.thewebdude.co.uk/">thewebdude</a>
 		</div>
 	</body>
 </html>			
