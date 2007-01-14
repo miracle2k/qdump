@@ -1,22 +1,22 @@
 <h2>Contact</h2>
 
 <% if @flash[:notice] %>
-  <h2><%= @flash[:notice] %></h2> 
+  <p style="font-weight: bold; color: blue;"><%= @flash[:notice] %></p> 
 <% end %>
 
 <%= start_form_tag :action => 'send_contact_form'  %>
-<table cellspacing="5">
+<table cellspacing="5" width="100%">
   <tr>
     <td>Your Name:</h2>
-    <td><%= text_field "author", "name" %></h2>
+    <td><%= text_field "author", "name", 'style' => 'width: 50%;'  %></h2>
   </tr>
   <tr>
     <td>Your E-Mail:</h2>
-    <td><%= text_field "author", "email" %></h2>
+    <td><%= text_field "author", "email", 'style' => 'width: 50%;' %></h2>
   </tr>
    <tr>
     <td valign="top">Your Message:</h2>
-    <td><%= text_area "author", "message" %><br/></h2>
+    <td><%= text_area ("author", "message", 'style' => 'width: 100%; height: 300px') %></td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: right">

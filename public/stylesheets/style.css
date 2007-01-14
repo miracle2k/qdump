@@ -109,6 +109,7 @@ h2
 #footer
 {
 	margin:0 auto;
+	border-top: 1px solid grey;
 	background:url(/images/footer.gif) no-repeat bottom;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:10px;

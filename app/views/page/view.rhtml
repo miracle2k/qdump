@@ -1,4 +1,2 @@
-<h2>Dumped <%=h(@item.date_added)%> :</h2>
-<div class="intro">
-  <%=h(@item.data)%>  
-</div>
+<h2>Dumped on <%=Time.at(@item.date_added).strftime("%Y-%m-%d @ %H:%M:%S")%>:</h2>
+<P><pre><%=h(@item.data)%></pre></p>

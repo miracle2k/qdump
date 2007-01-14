@@ -1,8 +1,8 @@
 class Mailer < ActionMailer::Base
    def contactform_message(author)
-     @recipients       = "me@mysite.com"
+     @recipients       = "michael@podster.de"
      @from             = author[:email]
-     @subject          = "New message"
+     @subject          = "Contact form (qdump)"
      @body['name']     = author[:name]
      @body['email']    = author[:email]
      @body['message']  = author[:message]

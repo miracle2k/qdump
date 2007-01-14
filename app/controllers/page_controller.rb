@@ -7,29 +7,20 @@ class PageController < ApplicationController
     redirect_to(:action => 'index')
   end
   
-  def about
-  end
-  
   def imprint
   end
   
   def contact
-    # form has been submitted
-    #if request.post 
-    #  SendMessage.contact_message(david)
-    #end
   end
   
- def send_contact_form
-   if request.post?
+  def send_contact_form
+    if request.post?
       Mailer::deliver_contactform_message(params[:author])
-    redirect_to :action => 'contact'
-    flash[:notice] = "Thanks for your message!"
-  end
-   end 
+      redirect_to :action => 'contact'
+      flash[:notice] = "Your message has been sent. Thank you!"
+    end
+  end 
 
-  
-  
   def index
   end
   
@@ -39,7 +30,6 @@ class PageController < ApplicationController
     if @item.save
       render :action => 'success'
     else
-      flash[:notice] = 'Item creation failed.'
       render :action => 'index'
     end
   end

@@ -51,3 +51,15 @@ end
 # end
 
 # Include your application configuration below
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.server_settings = {
+  :address          => "localhost",
+  :domain           => "localhost",
+  :port             => 25,
+  #:authentication   => :login,
+  #:user_name        => "", 
+  #:password         => "" 
+} 
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.default_charset = "utf-8" 
