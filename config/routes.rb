@@ -16,14 +16,13 @@ ActionController::Routing::Routes.draw do |map|
   # it as an accessor.
   map.connect "page", :controller => "page", :action => "view", :id => "page"
 
+  # Allow quick access urls to the page->view action.
+  map.connect ":id", :requirements => { :id => /^[a-zA-Z0-9]+$/ }, :controller => "page", :action => "view"
+
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
   map.connect ':controller/service.wsdl', :action => 'wsdl'
-    
+  
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
-  
-  # This needs to be placed after the default route, or Rails seems unable to build
-  # correct urls using 'link_to'
-  map.connect ":id", :requirements => { :id => /^[a-zA-Z0-9]+$/ }, :controller => "page", :action => "view"
 end
