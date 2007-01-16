@@ -2,4 +2,4 @@
   accessor = Item.id2accessor(@item.id)
 %>
 <h2>Yeah! Your text was stored, and is accessible at:</h2>
-<h2 style="text-align: center"><a href="/<%=accessor%>">qdump.org/<%=accessor%></a></h2>
+<h2 style="text-align: center"><%= link_to "qdump.com"+url_for(:action => 'view', :id => accessor), :action => 'view', :id => accessor %></h2>
