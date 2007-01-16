@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  validates_presence_of :date_added, :datatype, :data
+  validates_presence_of :date_added, :data
   
   # we use number as well as most ansi chars in the accessor ids we give out. 
   # case doesn't matter and we default to lowercase, but note that "l" and "i" are 

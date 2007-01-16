@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS items;
 CREATE TABLE items (
     id              INT         NOT NULL    auto_increment,
     date_added      datetime    NOT NULL,
-    datatype        INT         NOT NULL,    
+    remote_ip       VARCHAR(32) NOT NULL,
     data            TEXT        NULL,
     PRIMARY KEY (id)
 );

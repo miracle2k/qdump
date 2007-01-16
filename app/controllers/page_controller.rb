@@ -27,6 +27,7 @@ class PageController < ApplicationController
   def dump
     @item = Item.new(params[:item])
     @item.date_added = Time.now()
+    @item.remote_ip = request.remote_ip
     if @item.save
       render :action => 'success'
     else
