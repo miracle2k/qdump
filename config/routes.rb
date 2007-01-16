@@ -25,5 +25,5 @@ ActionController::Routing::Routes.draw do |map|
   
   # This needs to be placed after the default route, or Rails seems unable to build
   # correct urls using 'link_to'
-  map.connect ":id", :name => /^[^\/]+$/, :controller => "page", :action => "view"
+  map.connect ":id", :requirements => { :id => /^[a-zA-Z0-9]+$/ }, :controller => "page", :action => "view"
 end
