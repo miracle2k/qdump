@@ -1,10 +1,9 @@
 DROP TABLE IF EXISTS items;
 CREATE TABLE items (
-    id              INT         NOT NULL    auto_increment,
+    id              INTEGER     NOT NULL PRIMARY KEY autoincrement,
     date_added      datetime    NOT NULL,
     remote_ip       VARCHAR(32) NOT NULL,
-    data            TEXT        NULL,
-    PRIMARY KEY (id)
+    data            TEXT        NULL
 );
 
 DROP TABLE IF EXISTS freed_ids;
