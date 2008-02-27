@@ -1,0 +1,24 @@
+$HTTP["host"] =~ "(^|www\.)qdump\.com" {
+	# no-www
+	$HTTP["host"] =~ "^www\.(.*)$" {
+                url.redirect = ( "^/(.*)" => "http://%1/$1" )
+	}
+
+	server.document-root = "/var/www/qdump/htdocs/public"	
+
+	server.dir-listing = "disable"
+	server.indexfiles = ( "index.html" )
+	server.error-handler-404 = "/dispatch.fcgi"
+
+	fastcgi.server    = (".fcgi" =>
+        (
+                "qdump_railsapp" =>
+                (
+                        "min-procs" => 1,
+                        "max-procs" => 5,
+                        "socket" => "/tmp/ruby-railsapp.fastcgi",
+                        "bin-path" => server.document-root + "/dispatch.fcgi",
+			"bin-environment" => ("RAILS_ENV" => "production"),
+                )
+        ))
+}
