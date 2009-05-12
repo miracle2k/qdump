@@ -15,7 +15,7 @@ $HTTP["host"] =~ "(^|www\.)qdump\.com" {
                 "qdump_railsapp" =>
                 (
                         "min-procs" => 1,
-                        "max-procs" => 5,
+                        "max-procs" => 2,
                         "socket" => "/tmp/ruby-railsapp.fastcgi",
                         "bin-path" => server.document-root + "/dispatch.fcgi",
 			"bin-environment" => ("RAILS_ENV" => "production"),
